@@ -1,0 +1,36 @@
+{
+  "name": "froute",
+  "author": "Lee Crossley <leee@hotmail.co.uk> (http://ilee.co.uk/)",
+  "description": "WIP - A simple and powerful routing for node with expressive matching",
+  "homepage": "http://ilee.co.uk",
+  "version": "0.0.0",
+  "main": "froute.js",
+  "keywords": [
+    "froute",
+    "route",
+    "routing",
+    "url",
+    "rest",
+    "restful",
+    "api",
+    "web service"
+  ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:leecrossley/froute.git"
+  },
+  "engines": {
+    "node": ">= 0.8.x"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.x",
+    "grunt-shell": "~0.5.x",
+    "grunt-contrib-watch": "~0.5.x",
+    "grunt-contrib-jshint": "~0.7.x",
+    "grunt-contrib-jasmine": "~0.5.x"
+  }
+}
