@@ -19,11 +19,23 @@ var froute = (function () {
         return true;
     };
 
+    froute.list = function () {
+        return froutes;
+    };
+
     froute.bind = λ.curry(function (template, func) {
         var picked = picker.pick(template);
         picked.func = func;
         return add(picked);
     });
+
+    froute.unbind = function (template) {
+        var partitioned = λ.partition(function (item) {
+            return template === item.froute;
+        }, froutes);
+        froutes = partitioned[1];
+        return partitioned[0];
+    };
 
     froute.reset = function () {
         froutes = [];
