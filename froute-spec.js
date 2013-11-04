@@ -88,7 +88,7 @@ describe("froute", function() {
     it("should dispatch a url with multiple parameters", function() {
         var template = "/apple/{type}/size/{size}",
             resultParams;
-        
+
         var bindResult = froute.bind(template, function(params) {
             resultParams = params;
         });

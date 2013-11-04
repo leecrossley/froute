@@ -11,3 +11,40 @@ npm install froute --save
 ```
 var froute = require("froute");
 ```
+
+## Examples
+
+### Binding a froute template
+
+```javascript
+var template = "/apple/{type}",
+    bindResult = froute.bind(template, callback);
+
+expect(bindResult).toBeTruthy();
+expect(froute.list().length).toEqual(1);
+```
+
+### Unbinding a froute template
+
+```javascript
+var unbound = froute.unbind(template);
+
+expect(unbound.length).toEqual(1);
+```
+
+### Full example, bind and dispatch
+
+```javascript
+var template = "/apple/{type}/size/{size}",
+    resultParams;
+
+var bindResult = froute.bind(template, function(params) {
+    resultParams = params;
+});
+
+froute.dispatch("/apple/gala/size/large");
+
+expect(bindResult).toBeTruthy();
+expect(froute.list().length).toEqual(1);
+expect(resultParams).toEqual({type:"gala",size:"large"});
+```
