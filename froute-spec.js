@@ -85,4 +85,19 @@ describe("froute", function() {
         expect(type).toEqual("gala");
     });
 
+    it("should dispatch a url with multiple parameters", function() {
+        var template = "/apple/{type}/size/{size}",
+            resultParams;
+        
+        var bindResult = froute.bind(template, function(params) {
+            resultParams = params;
+        });
+
+        froute.dispatch("/apple/gala/size/large");
+
+        expect(bindResult).toBeTruthy();
+        expect(froute.list().length).toEqual(1);
+        expect(resultParams).toEqual({type:"gala",size:"large"});
+    });
+
 });
