@@ -55,4 +55,19 @@ describe("froute", function() {
         expect(result2[0].froute).toEqual(template);
     });
 
+    it("should dispatch with a static url and template", function() {
+        var template = "/apples",
+            calledBack = 0;
+        
+        var bindResult = froute.bind(template, function() {
+            calledBack++;
+        });
+
+        froute.dispatch("/apples");
+
+        expect(bindResult).toBeTruthy();
+        expect(froute.list().length).toEqual(1);
+        expect(calledBack).toEqual(1);
+    });
+
 });

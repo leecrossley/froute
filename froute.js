@@ -23,6 +23,16 @@ var froute = (function () {
         return froutes;
     };
 
+    froute.dispatch = function (url) {
+        var matchUrl = picker.match(url);
+        var match = λ.first(function (item) {
+            return matchUrl(item);
+        }, froutes);
+        if (match && typeof(match.func) === "function") {
+            match.func(match.parameters);
+        }
+    };
+
     froute.bind = λ.curry(function (template, func) {
         var picked = picker.pick(template);
         picked.func = func;
