@@ -11,10 +11,12 @@ var picker = (function () {
             regex = froute,
             parameters = [];
 
-        λ.each(function (item) {
-            regex = regex.replace(item, "([\\w\\d]+)");
-            parameters.push(item.replace(/\{/, "").replace(/\}$/, ""));
-        }, placeholders);
+        if (placeholders) {
+            λ.each(function (item) {
+                regex = regex.replace(item, "([\\w\\d]+)");
+                parameters.push(item.replace(/\{/, "").replace(/\}$/, ""));
+            }, placeholders);
+        }
 
         return {
             "froute": froute,
@@ -22,6 +24,18 @@ var picker = (function () {
             "parameters": parameters
         };
     };
+
+    picker.match = λ.curry(function (test, picked) {
+        var match = test.match(picked.regex),
+            result = {};
+        if (match) {
+            λ.each(function (item, i) {
+                result[item] = match[i + 1];
+            }, picked.parameters);
+            return result;
+        }
+        return false;
+    });
 
     return picker;
 })();
