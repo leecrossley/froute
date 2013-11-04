@@ -26,11 +26,14 @@
     "node": ">= 0.8.x"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.x",
     "grunt-cli": "~0.1.x",
     "grunt-shell": "~0.5.x",
     "grunt-contrib-watch": "~0.5.x",
     "grunt-contrib-jshint": "~0.7.x",
     "grunt-contrib-jasmine": "~0.5.x"
+  },
+  "dependencies": {
+    "functional.js": "~0.2.x"
   }
 }
