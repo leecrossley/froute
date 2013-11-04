@@ -70,4 +70,19 @@ describe("froute", function() {
         expect(calledBack).toEqual(1);
     });
 
+    it("should dispatch a url with parameter", function() {
+        var template = "/apple/{type}",
+            type = "unknown";
+        
+        var bindResult = froute.bind(template, function(params) {
+            type = params.type;
+        });
+
+        froute.dispatch("/apple/gala");
+
+        expect(bindResult).toBeTruthy();
+        expect(froute.list().length).toEqual(1);
+        expect(type).toEqual("gala");
+    });
+
 });

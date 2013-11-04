@@ -24,12 +24,14 @@ var froute = (function () {
     };
 
     froute.dispatch = function (url) {
-        var matchUrl = picker.match(url);
+        var matchUrl = picker.match(url),
+            params;
         var match = λ.first(function (item) {
-            return matchUrl(item);
+            params = matchUrl(item);
+            return params;
         }, froutes);
         if (match && typeof(match.func) === "function") {
-            match.func(match.parameters);
+            match.func(params);
         }
     };
 
