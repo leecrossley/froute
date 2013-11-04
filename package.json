@@ -3,7 +3,7 @@
   "author": "Lee Crossley <leee@hotmail.co.uk> (http://ilee.co.uk/)",
   "description": "WIP - A simple and powerful routing for node with expressive matching",
   "homepage": "http://ilee.co.uk",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "froute.js",
   "keywords": [
     "froute",
@@ -34,6 +34,7 @@
     "grunt-contrib-jasmine": "~0.5.x"
   },
   "dependencies": {
-    "functional.js": "~0.2.x"
+    "functional.js": "~0.2.x",
+    "froute-picker": "~0.0.x"
   }
 }
