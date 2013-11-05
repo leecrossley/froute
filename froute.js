@@ -32,7 +32,9 @@ var froute = (function () {
         }, froutes);
         if (match && typeof(match.func) === "function") {
             match.func(params);
+            return true;
         }
+        return;
     };
 
     froute.bind = λ.curry(function (template, func) {

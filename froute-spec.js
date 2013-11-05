@@ -93,11 +93,22 @@ describe("froute", function() {
             resultParams = params;
         });
 
-        froute.dispatch("/apple/gala/size/large");
+        var dispatchResult = froute.dispatch("/apple/gala/size/large");
 
         expect(bindResult).toBeTruthy();
+        expect(dispatchResult).toBeTruthy();
         expect(froute.list().length).toEqual(1);
         expect(resultParams).toEqual({type:"gala",size:"large"});
+    });
+
+    it("should not dispatch a url that doesn't match a template", function() {
+        var template = "/apple/{type}/size/{size}",
+            bindResult = froute.bind(template, nothing),
+            dispatchResult = froute.dispatch("/apple/orange");
+
+        expect(bindResult).toBeTruthy();
+        expect(dispatchResult).toBeFalsy();
+        expect(froute.list().length).toEqual(1);
     });
 
 });

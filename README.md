@@ -2,6 +2,8 @@
 
 **Simple and powerful routing for node with expressive matching.**
 
+![froute](froute-logo.png)
+
 ## Getting started
 
 ```
@@ -42,9 +44,10 @@ var bindResult = froute.bind(template, function(params) {
     resultParams = params;
 });
 
-froute.dispatch("/apple/gala/size/large");
+var dispatchResult = froute.dispatch("/apple/gala/size/large");
 
 expect(bindResult).toBeTruthy();
+expect(dispatchResult).toBeTruthy();
 expect(froute.list().length).toEqual(1);
 expect(resultParams).toEqual({type:"gala",size:"large"});
 ```
