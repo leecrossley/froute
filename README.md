@@ -2,7 +2,7 @@
 
 **Simple and powerful routing for node with expressive matching.**
 
-![froute](froute-logo.png)
+![froute](https://raw.github.com/leecrossley/froute/master/froute-logo.png)
 
 ## Getting started
 
