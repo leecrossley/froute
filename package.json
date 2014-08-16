@@ -3,7 +3,7 @@
   "author": "Lee Crossley <leee@hotmail.co.uk> (http://ilee.co.uk/)",
   "description": "Simple and powerful routing for node with expressive matching",
   "homepage": "http://ilee.co.uk",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "froute.js",
   "keywords": [
     "froute",
@@ -32,7 +32,7 @@
     "grunt-contrib-watch": "~0.6.x"
   },
   "dependencies": {
-    "functional.js": "~0.5.x",
+    "functional.js": "~0.6.x",
     "froute-picker": "~0.0.x"
   }
 }
